@@ -1,0 +1,1645 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+
+@import url('font/css2.css');
+@import url('font/font-awesome.min.css');
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+/*************** ADD CUSTOM CSS HERE.   ***************/
+
+.cs-p0 {
+    padding: 0 !important;
+}
+
+@media (min-width: 768px) {
+    .cs-p0-desktop {
+        padding: 0 !important;
+    }
+}
+
+.cs-pb0, .cs-pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.cs-pt0 {
+    padding-top: 0 !important;
+}
+
+
+.cs-mb0 {
+    margin-bottom: 0 !important;
+}
+
+.cs-flex-col div.col-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-text-primary-2{
+    color: #3366ff;
+}
+
+.cs-text-primary-3{
+    color: #0000ff;
+}
+
+.cs-text-left {
+    text-align: left !important;
+}
+
+.custom-text-justify p {
+    text-align: justify;
+}
+
+ol, ul, li {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+ul li.line {
+    list-style: none;
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: 15px;
+    margin-left: 0px;
+}
+
+ul li.line i {
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+
+/*****************************Header*****************************/
+.nav .trp-shortcode-switcher{
+    padding: 0px;
+    margin-top: 10px;
+}
+/*****************************End header***********************************/
+
+/*****************************Home*****************************/
+
+.cs-slider-item{
+    width: 100%;
+    position: relative;
+}
+
+.cs-slider-item .cs-row-sl-item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 0;
+}
+
+.cs-slider-item .cs-row-sl-item .title {
+    background: #183650;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.cs-slider-item .cs-row-sl-item .title  a {
+    color: #fff;
+    text-decoration: none;      
+}
+
+
+
+.cs-slider-item .cs-row-sl-item .icon {
+    position: relative;
+    max-width: 250px;
+    margin: auto;
+    border-bottom: solid 2px transparent;
+    height: 80px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.cs-slider-item .cs-row-sl-item .icon img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.cs-slider-item .cs-row-sl-item .cs-item-col:hover .icon img:last-child {
+    opacity: 1;
+}
+
+.cs-slider-item .cs-row-sl-item .cs-item-col .icon img {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.cs-slider-item .cs-row-sl-item .cs-item-col:hover .icon img:last-child {
+    opacity: 0;
+}
+
+
+.cs-slider-item .cs-row-sl-item .cs-item-col .icon img {
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.cs-slider-item .cs-row-sl-item .cs-item-col:hover .icon {
+    border-bottom-color: #35c9fc;
+}
+
+.cs-slider-item .cs-row-sl-item .title span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.75;
+}
+
+.cs-more {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px 20px;
+    color: #fff;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.cs-text-inherit p {
+    text-align: justify;
+}
+
+.cs-text-inherit p span {
+    line-height: inherit;
+    font-style: inherit;
+}
+
+.cs-h-box .box-image {
+    display: block;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    border: solid 10px rgba(255, 255, 255, 0.05);
+}
+
+.cs-h-box .box-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.cs-h-box .cs-h-title h4 {
+    color: #00aeef;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 1023px) {
+.cs-h-box .cs-h-content {
+    font-weight: 300;
+    line-height: 24px;
+    color: #fff;
+    min-height: 175px;
+    overflow: hidden;
+}
+}
+
+.cs-h-box .cs-h-content p {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.cs-h-more {
+    display: inline-block;
+    vertical-align: middle;
+    background: #00aeef;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 0px 22px 0px 22px;
+    border-radius: 40px;
+    margin-top: 15px;
+}
+
+.cs-h-more span {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.cs-h-more:hover {
+    background: #004a80;
+}
+
+/*****************************End home***********************************/
+
+/*****************************FOOTER*****************************/
+
+footer .foot-title {
+    margin-top: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+}
+
+.footer-wrapper .absolute-footer{
+    display: none !important;
+}
+
+.foot-ser ul, 
+.foot-ser-drawer ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.foot-ser ul li, 
+.foot-ser-drawer ul li{
+    margin-bottom: 6px;
+    font-size: 15px;
+    padding-left: 22px;
+    position: relative;
+    margin-left: 0px;
+}
+
+.foot-ser li a{
+    color: #fff;
+}
+
+.foot-ser-drawer li a{
+    color: #333333;
+}
+
+.foot-ser li:hover a, 
+.foot-ser-drawer li:hover a{
+    text-decoration: underline;
+}
+
+.foot-ser li:before , 
+.foot-ser-drawer li:before {
+    font-family: "FontAwesome";
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.foot-nav:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #025492;
+    margin-bottom: 15px;
+}
+
+.foot-nav ul, .foot-ser ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.foot-nav ul {
+    text-align: left;
+    font-size: 0;
+}
+
+.foot-nav li:first-child {
+    margin-left: 0px;
+}
+
+.foot-nav li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 10px;
+}
+
+.foot-nav a, 
+.foot-nav li {
+    color: #fff;
+    font-size: 16px;
+}
+
+.foot-nav a:hover{
+    text-decoration: underline;
+}
+
+/*****************************Responsive*****************************/
+
+@media (min-width: 1024px) {
+    .header ul.header-nav li.menu-item a{
+        font-size: 14px;
+        cursor: pointer;
+    } 
+
+    .header .logo-left .logo {
+        margin-right: 0px;
+    }
+
+    footer .foot-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* chia lam 5 cot */
+    .cs-slider-item .cs-row-sl-item .cs-w-1\/5{
+        flex-basis: 20% !important;
+        max-width: 20% !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    footer .foot-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Custom Single Post Header Styling */
+.custom-breadcrumb-bar {
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    line-height: 1;
+    font-size: 14px;
+}
+
+.custom-breadcrumb-bar .container {
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+}
+
+.custom-breadcrumb-bar .container .custom-breadcrumb-container {
+    padding: 10px 25px 7px 25px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    border-top-left-radius: 30px;
+    background: #0255a3;
+    color: #fff;
+    min-width: 25%;
+    text-align: left;
+
+}
+
+.custom-breadcrumb-bar.cs-w-full .container .custom-breadcrumb-container{
+    width: 100%;
+}
+
+.custom-breadcrumb-bar .container a {
+    color: #fff;
+    font-weight: normal;
+}
+
+.custom-breadcrumb-container > span > span {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+
+.post-template-default.single.single-post #main #content.page-wrapper {
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+#content.blog-wrapper.blog-single.page-wrapper article .entry-content.single-page {
+    padding-top: 0px;
+}
+
+.is-divider {
+    background: transparent;
+}
+
+.custom-blog-post img, .category .post-item img, .search-results .post-item img {
+    display: table-cell;
+    width: 100%;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.custom-blog-post .image-cover img, .category .image-cover img, .search-results .image-cover img {
+    height: 100%;
+    object-fit: contain !important;
+     vertical-align: middle;
+}
+
+/* Chọn bài viết đầu tiên bên trong danh sách */
+.custom-blog-post > div:first-child .image-cover {
+    padding-top: 65% !important;
+}
+
+.custom-blog-post .custom-title-blog-post .custom-time-post{
+     width: 45px;
+    background: #00aeef;
+    font-family: "RobotoCondensed";
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    padding-top: 5px;
+    min-height: 60px;
+    line-height: 1.2;
+    word-spacing: 45px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.custom-blog-post .custom-title-blog-post .custom-time-post .day{
+    font-size: 26px;
+}
+
+.custom-blog-post .custom-title-blog-post .post-title a{
+    color: #00aeef;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.category .post-item, 
+.search-results .post-item {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.custom-blog-post .col-inner:hover .post-title a,
+.category .box-blog-post:hover .post-title a,
+.search-results .box-blog-post:hover .post-title a {
+    color: #004a80;
+}
+
+.custom-blog-post .col-inner:hover .custom-time-post,
+.category .box-blog-post:hover .custom-time-post,
+.search-results .box-blog-post:hover .custom-time-post {
+    background: #004a80;
+    color: #fff;
+}
+
+.custom-blog-post .custom-title-blog-post .custom-time-post .month{
+    font-size: 14px;
+}
+
+.custom-blog-post .custom-title-blog-post {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.custom-blog-post .custom-title-blog-post .is-divider {
+    display: none;
+}
+
+.custom-slider-brand .gallery-col.col .col-inner {
+    background: #fff;
+    border: solid 1px #e3e3e3;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-slider-brand .gallery-col.col .col-inner .gallery-box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-slider-brand .gallery-col.col .col-inner .gallery-box .box-image {
+   height: 95%;
+   width: 95%;
+}
+
+.custom-slider-brand .box-text {
+    display: none;
+}
+
+.custom-slider-brand .gallery-col.col .col-inner .gallery-box .box-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.custom-show-nav-slider .slider-nav-push:not(.slider-nav-reveal) .flickity-prev-next-button {
+    margin-top: -3%;
+}
+
+/* Luôn hiển thị nút Previous và Next trên Slider */
+.custom-show-nav-slider .flickity-prev-next-button {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.flickity-prev-next-button svg .arrow {
+    fill: #00aeef;
+}
+
+.custom-show-nav-slider .flickity-prev-next-button svg{
+    border: solid 2px #00aeef !important;
+}
+
+.slider-nav-circle .flickity-prev-next-button:hover .arrow, .slider-nav-circle .flickity-prev-next-button:hover svg
+ {
+    fill: #fff !important;
+    background-color: #00aeef !important;
+    border-color: #00aeef;
+}
+
+/* Related Posts Sidebar Styling */
+a.related-post-item {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    text-decoration: none !important;
+}
+
+.custom-related-posts-sidebar .related-post-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.custom-related-posts-sidebar .related-post-info {
+    padding: 15px;
+}
+
+.custom-related-posts-sidebar .related-post-info h5 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-size: 16px;
+    font-weight: 400;
+    color: #1e5c94;
+    transition: color 0.3s;
+}
+
+.custom-related-posts-sidebar a.related-post-item:hover .related-post-info h5 {
+    color: #00aeef;
+}
+
+.custom-related-posts-sidebar .related-post-date {
+    display: block;
+    color: #cc0000;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.custom-related-posts-sidebar .related-post-date i {
+    margin-right: 5px;
+    color: #cc0000;
+}
+
+/* Hiệu ứng Hover cho ảnh bài viết liên quan */
+.custom-related-posts-sidebar .related-post-image {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.custom-related-posts-sidebar .related-post-image:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-image: url('/wp-content/uploads/2026/04/plus.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.custom-related-posts-sidebar .related-post-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 78, 127, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.custom-related-posts-sidebar .related-post-image img {
+    transition: none;
+    display: block;
+}
+
+.custom-related-posts-sidebar .related-post-item:hover .related-post-image img {
+    transform: none;
+}
+
+.custom-related-posts-sidebar .related-post-item:hover .related-post-image:before,
+.custom-related-posts-sidebar .related-post-item:hover .related-post-image:after {
+    opacity: 1;
+}
+
+#secondary.widget-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#secondary.widget-area .widget {
+    margin-bottom: 0px;
+}
+
+.breadcrumb_last {
+    font-weight: 400;
+}
+
+#post-list .box-text.text-left .post-title.is-large {
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: #111111;
+}
+
+#post-list .box-blog-post:hover .post-title a {
+    color: #00aeef;
+}
+
+/* Hiệu ứng hover dấu cộng cho ảnh đại diện tại trang Chuyên mục (Archive) */
+.category .box-blog-post .box-image,
+.category .box .box-image,
+.search-results .box-blog-post .box-image,
+.search-results .box .box-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.category .box-blog-post .box-image:before,
+.category .box .box-image:before,
+.search-results .box-blog-post .box-image:before,
+.search-results .box .box-image:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-image: url('/wp-content/uploads/2026/04/plus.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.category .box-blog-post .box-image:after,
+.category .box .box-image:after,
+.search-results .box-blog-post .box-image:after,
+.search-results .box .box-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 78, 127, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.category .box-blog-post:hover .box-image:before,
+.category .box-blog-post:hover .box-image:after,
+.category .box:hover .box-image:before,
+.category .box:hover .box-image:after,
+.search-results .box-blog-post:hover .box-image:before,
+.search-results .box-blog-post:hover .box-image:after,
+.search-results .box:hover .box-image:before,
+.search-results .box:hover .box-image:after {
+    opacity: 1;
+}
+
+.category .box-blog-post,
+.category .box,
+.search-results .box-blog-post,
+.search-results .box {
+    position: relative;
+}
+
+.category .box-blog-post .stretched-link::after,
+.category .box .stretched-link::after,
+.search-results .box-blog-post .stretched-link::after,
+.search-results .box .stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    content: "";
+}
+
+#post-list .box-text.text-left {
+    display: flex;
+}
+
+
+.nav-dropdown-bold .nav-column li>a, .nav-dropdown.nav-dropdown-bold>li>a {
+    border-radius: 0px;
+    margin: 0px;
+    color: #fff;
+}
+
+.nav-dropdown {
+   padding: 2px 0px 0px 0px;
+}
+
+.nav-dropdown-bold .nav-column li>a, .nav-dropdown.nav-dropdown-bold>li>a:hover {
+    background-color: #004a80;
+}
+
+
+/* Bao bọc toàn bộ CSS bên trong class .custom-shipping-form */
+.custom-shipping-form {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Tiêu đề */
+.custom-shipping-form h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0px 0 15px 0;
+    text-transform: uppercase;
+    color: #222 !important;
+}
+
+/* Chia hàng */
+.custom-shipping-form .form-row {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+/* Nhãn bên trái */
+.custom-shipping-form .form-label {
+    flex: 0 0 250px; /* Độ rộng cố định cho nhãn */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Ô nhập liệu bên phải */
+.custom-shipping-form .form-field {
+    flex: 1;
+}
+
+/* Tùy chỉnh các input cụ thể bên trong form này */
+.custom-shipping-form .wpcf7-form-control:not(.wpcf7-submit) {
+    width: 100%;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Hiệu ứng khi click vào ô nhập */
+.custom-shipping-form .wpcf7-form-control:focus {
+    border-color: #666;
+    outline: none;
+}
+
+/* Cấu trúc hàng đặc biệt (Weight, Volume) */
+.custom-shipping-form .flex-row {
+    display: flex;
+    gap: 0;
+}
+
+.custom-shipping-form .flex-row .wpcf7-form-control {
+    border-radius: 4px 0 0 4px;
+}
+
+.custom-shipping-form .flex-row select, 
+.custom-shipping-form .flex-row .unit-box {
+    flex: 0 0 80px;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    background: #f8f8f8;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    font-size: 13px;
+}
+
+/* Nút Submit */
+
+.custom-shipping-form .wpcf7-submit {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 35px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.custom-shipping-form .wpcf7-submit:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+    .custom-shipping-form .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .custom-shipping-form .form-label {
+        margin-bottom: 5px;
+        flex: 0 0 100%;
+    }
+    .custom-shipping-form .form-field {
+        width: 100%;
+    }
+}
+
+.custom-shipping-form button.wpcf7-submit {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    vertical-align: middle;
+    height: 33px;
+    line-height: 31px;
+    padding: 0 29px 1px 19px;
+    border-radius: 35px;
+    border: solid 1px #ccc;
+    color: #131313;
+    margin-right: 22px;
+    font-size: 13px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.custom-shipping-form button.wpcf7-submit:hover,
+.custom-shipping-form button.wpcf7-submit i {
+    color: #005ca2;
+}
+
+/* Container nhóm input và đơn vị */
+.custom-shipping-form .input-group {
+    display: flex;
+    align-items: stretch; /* Đảm bảo chiều cao bằng nhau */
+}
+
+/* Ô nhập liệu chính */
+.custom-shipping-form .input-group input {
+    flex: 1;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right: none !important; /* Bỏ viền phải để dính liền */
+}
+
+/* Vùng chứa đơn vị (Dropdown hoặc Text) */
+.custom-shipping-form .input-group-append {
+    flex: 0 0 100px; /* Độ rộng cho ô đơn vị */
+    display: flex;
+}
+
+/* Style cho select đơn vị và ô CBM */
+.custom-shipping-form .input-group-append select,
+.custom-shipping-form .input-group-append .unit-text {
+    width: 100%;
+    margin: 0 !important;
+    padding: 5px 25px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 0 4px 4px 0 !important; /* Bo góc phải */
+    background-color: #f8f8f8 !important;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Riêng cho span CBM để căn giữa chữ */
+.custom-shipping-form .unit-text {
+    text-align: center;
+    border-left: 1px solid #ddd !important; /* Tạo vạch ngăn nhẹ */
+}
+
+/* Reset lại border cho select để khớp với input */
+.custom-shipping-form .input-group-append select {
+    cursor: pointer;
+    -webkit-appearance: none; /* Ẩn mũi tên mặc định nếu muốn giống hoàn toàn ảnh */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2712%27%20height%3D%2712%27%20viewBox%3D%270%200%2012%2012%27%3E%3Cpath%20fill%3D%27%23333%27%20d%3D%27M10.293%203.293L6%207.586%201.707%203.293A1%201%200%2000.293%204.707l5%205a1%201%200%20001.414%200l5-5a1%201%200%2010-1.414-1.414z%27/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px !important;
+}
+
+.custom-shipping-form .form-field.input-group p {
+   width: 100%;
+}
+
+/* Branch Map Shortcode Styling */
+.thami-branch-section {
+    margin: 0;
+    overflow: hidden;
+}
+
+.branch-section-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 30px;
+    text-transform: none;
+}
+
+.branch-tabs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 40px;
+}
+
+.branch-tabs-container .custom-branch-slider {
+    padding-bottom: 0; 
+}
+
+/* Flickity Cell Wrapper */
+.branch-tab-cell {
+    padding-bottom: 20px; /* Padding for shadow visibility */
+}
+
+/* Tab Item (Pill inside the cell) */
+.branch-tab-item {
+    cursor: pointer;
+    text-align: center;
+    font-weight: 400;
+    color: #666;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    user-select: none;
+    line-height: 1.3;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 40px;
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.branch-tab-cell.is-active .branch-tab-item {
+    background-color: #2a61af;
+    color: #fff !important;
+    border-radius: 40px;
+    box-shadow: 0 4px 10px rgba(42, 97, 175, 0.3);
+}
+
+.branch-tab-cell:hover:not(.is-active) .branch-tab-item {
+    color: #2a61af;
+}
+
+/* Pointing Triangle */
+.branch-tab-cell.is-active .branch-tab-item:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #2a61af transparent transparent transparent;
+}
+
+/* Customizing Flickity Buttons */
+.custom-branch-slider .flickity-prev-next-button {
+    width: 35px;
+    height: 25px;
+    background: #d4d4d4 !important;
+    border-radius: 20px;
+    top: 135px;
+    transform: translateY(-50%) !important;
+    box-shadow: none;
+    opacity: 1 !important;
+    color: #FFF;
+    padding: 3px 10px;
+    font-size: 10px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    display: flex;
+    ;
+}
+
+@media (max-width: 1023px) {
+    .custom-branch-slider .flickity-prev-next-button {
+        top: 100px;
+    }
+}
+
+@media (max-width: 767px) {
+    .custom-branch-slider .flickity-prev-next-button {
+        top: 60px;
+    }
+}
+
+/* ĐÂY LÀ ĐOẠN CODE KHỐNG CHẾ LỖI BỊ ĐÈ CSS MÀ BẠN VỪA GỬI ẢNH CHỤP */
+.slider-show-nav.custom-branch-slider .flickity-prev-next-button, 
+.custom-branch-slider.slider:hover .flickity-prev-next-button {
+    transform: translateY(-50%) !important;
+    opacity: 1 !important; /* Đừng quên giữ opacity nếu Flatsome ép xuống 0.7 */
+}
+
+.custom-branch-slider .flickity-prev-next-button:hover {
+    background: #a1a1a1 !important;
+}
+
+/* Ẩn icon mặc định của slider */
+.custom-branch-slider .flickity-prev-next-button svg {
+    display: none !important;
+}
+
+.custom-branch-slider .flickity-prev-next-button i.fa {
+    font-size: 16px; /* Kích thước icon chuẩn để căn giữa */
+    color: #fff;
+    line-height: 1;
+}
+
+.custom-branch-slider .flickity-prev-next-button.previous { left: -30px; opacity: 1 !important; visibility: visible !important; }
+.custom-branch-slider .flickity-prev-next-button.next { right: -30px; opacity: 1 !important; visibility: visible !important; }
+
+/* Info Bar */
+.branch-info-bar {
+    background-color: #3164b3;
+    color: #fff;
+    padding: 15px 0;
+    font-size: 14px;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.branch-info-bar p {
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px 15px;
+}
+
+.branch-info-bar span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.branch-info-bar .sep {
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .branch-info-bar p {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .branch-info-bar .sep {
+        display: none;
+    }
+}
+
+/* Content Switcher */
+.branch-content-item {
+    display: none;
+}
+
+.branch-content-item.is-active {
+    display: block;
+    animation: thamiFadeIn 0.5s ease-in-out;
+}
+
+@keyframes thamiFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.cs-bg-pdf {
+    background-color: rgb(88, 118, 206);
+    color: #fff;
+    padding: 10px 25px;
+    border: 0.5px solid #fff;
+    cursor: pointer;
+}
+
+
+.cs-bg-pdf .icon-box-text{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+li.menu-item.has-dropdown  ul.sub-menu.nav-dropdown {
+    background-color: #00aeef !important;
+}
+
+.menu-item.has-dropdown .nav-dropdown li {
+    border-bottom: 1px solid #fff;
+}
+
+.menu-item.has-dropdown .nav-dropdown li.active {
+    background-color: #3366ff;
+}
+
+.form-flat input:not([type=submit]) {
+    border-radius: 8px;
+}
+
+/* ============ SEARCH DROPDOWN - CLICK MODE ============ */
+
+/* Ẩn mặc định */
+.header-search-dropdown > .nav-dropdown {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Hiện khi click */
+.header-search-dropdown > .nav-dropdown.is-active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    left: auto !important;
+    right: 0 !important;
+    top: 100% !important;
+}
+
+/* Wrapper dropdown */
+.header-search-dropdown .header-search-form-wrapper {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+    min-width: 320px;
+}
+
+/* Form container */
+.header-search-dropdown .searchform-wrapper {
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* Flex row giữ input + button */
+.header-search-dropdown .searchform .flex-row {
+    border: 1.5px solid #00aeef;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    align-items: center;
+}
+
+/* Input tìm kiếm */
+.header-search-dropdown input.search-field {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    width: 100%;
+}
+
+.header-search-dropdown input.search-field::placeholder {
+    color: #00aeef !important;
+    opacity: 1;
+}
+
+/* Nút submit */
+.header-search-dropdown button.ux-search-submit {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 8px 14px !important;
+    cursor: pointer;
+    color: #00aeef !important;
+    font-size: 16px !important;
+    display: flex;
+    align-items: center;
+}
+
+.header-search-dropdown button.ux-search-submit:hover {
+    background: transparent !important;
+    color: #0088cc !important;
+}
+
+.header-search-dropdown button.ux-search-submit i {
+    color: #00aeef !important;
+    font-size: 18px;
+}
+
+/* Ẩn live search results hoàn toàn (đã bị xóa qua JS) */
+.header-search-dropdown .live-search-results {
+    display: none !important;
+}
+
+/* Nav link search */
+li.header-search-dropdown > a {
+    cursor: pointer;
+}
+
+/* Ẩn loading spinner của Flatsome trên nút search */
+.header-search-dropdown button.ux-search-submit .ux-loading,
+.header-search-dropdown button.ux-search-submit .loading-icon,
+.header-search-dropdown .loading button.ux-search-submit::after,
+.header-search-dropdown button.ux-search-submit::after,
+.header-search-dropdown button.ux-search-submit.loading::after,
+.header-search-dropdown .form-flat.loading button::after,
+.header-search-dropdown .form-flat .submit-button.loading::after,
+.header-search-dropdown .searchform-wrapper.form-flat .submit-button.loading::after,
+.header-search-dropdown .is-loading button.ux-search-submit::after,
+.header-search-dropdown .searchform.loading .ux-search-submit::after,
+.header-search-dropdown .searchform.is-loading .ux-search-submit::after {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+}
+
+/* Luôn giữ icon search hiển thị, bất kể trạng thái loading */
+.header-search-dropdown button.ux-search-submit i,
+.header-search-dropdown button.ux-search-submit i.icon-search,
+.header-search-dropdown button.ux-search-submit.loading i {
+    display: inline-flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+
+/* Ẩn tuyệt đối phần gợi ý live search */
+.header-search-dropdown .live-search-results,
+.header-search-dropdown .autocomplete-suggestions,
+.header-search-dropdown .autocomplete-suggestion {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+div#main-menu.mobile-sidebar ul li a {
+    border-top: solid 1px #e6e6e6;
+    color: #00aeef !important;
+}
+
+div#main-menu.mobile-sidebar ul li button i {
+     color: #00aeef !important;
+}
+
+.nav.mobile-nav .icon-menu {
+    color: #00aeef !important;
+}
+
+.header-search-form-wrapper .searchform input, 
+.header-search-form-wrapper .searchform button i {
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.header-search-form-wrapper .searchform .button.icon i {
+    color: #00aeef !important;
+    font-size: 14px !important;
+}
+
+/* đổi màu placeholder của search */
+.header-search-form-wrapper .searchform input::placeholder {
+    color: #00aeef !important;
+}
+
+#wrapper header .stuck .header-main {
+    height: 110px !important;
+}
+
+#wrapper header .stuck #logo img {
+    max-height: 90px !important;
+}
+
+@media screen and (max-width: 1024px) {
+    #wrapper header .stuck .header-main {
+        height: 85px !important;
+    }
+
+    #wrapper header .stuck #logo img {
+        max-height: 55px  !important;
+    }
+
+    .mobile-nav.nav.nav-right .header-block {
+        width: fit-content !important;
+    }
+
+    .custom-drawer.has-block {
+        font-size: 1.5rem;
+    }
+
+    .header-logo-dark {
+        display: block !important;
+    }
+
+    header #logo.flex-col.logo a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* ============ STICKY HEADER CUSTOMIZATION ============ */
+
+/* DESKTOP: Only Header Bottom is sticky */
+@media (min-width: 850px) {
+    .stuck .header-main,
+    .stuck .header-top {
+        display: none !important;
+    }
+    .stuck .header-bottom {
+        display: block !important;
+    }
+}
+
+/* MOBILE: Only Header Main is sticky */
+@media (max-width: 849px) {
+    .stuck .header-bottom,
+    .stuck .header-top {
+        display: none !important;
+    }
+    .stuck .header-main {
+        display: block !important;
+        height: auto !important;
+    }
+}
+
+/* ============ END STICKY HEADER CUSTOMIZATION ============ */
+
+/* ============ CUSTOM RIGHT DRAWER ============ */
+
+/* Overlay backdrop */
+.cs-drawer-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 99998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cs-drawer-overlay.is-open {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Drawer panel */
+.cs-drawer-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 290px;
+    max-width: 90vw;
+    background: #fff;
+    z-index: 99999;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    visibility: hidden; /* Tránh hiện tượng nháy khi chưa mở */
+}
+
+.cs-drawer-panel.is-open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+}
+
+/* Drawer header row */
+.cs-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 2;
+}
+
+.cs-drawer-vip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1.5px solid #ccc;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.cs-drawer-vip-btn:hover {
+    border-color: #00aeef;
+    color: #00aeef;
+}
+
+.cs-drawer-vip-btn img {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.cs-drawer-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    line-height: 1;
+    padding: 4px 6px;
+    transition: color 0.2s;
+}
+
+.cs-drawer-close:hover {
+    color: #00aeef;
+}
+
+/* Drawer body */
+.cs-drawer-body {
+    padding: 0 10px 10px 10px;
+    flex: 1;
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Company name */
+.cs-drawer-company-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #00aeef;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+/* Info list */
+.cs-drawer-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.cs-drawer-info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 9px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.cs-drawer-info-list li i {
+    color: #555;
+    font-size: 13px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    width: 14px;
+    text-align: center;
+}
+
+/* Section title */
+.cs-drawer-section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #00aeef;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 18px 0 10px 0;
+}
+
+/* Services list */
+.cs-drawer-service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+}
+
+.cs-drawer-service-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    font-size: 13px;
+    color: #333;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.cs-drawer-service-list li:last-child {
+    border-bottom: none;
+}
+
+.cs-drawer-service-list li i {
+    color: #00aeef;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+/* Social icons */
+.cs-drawer-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.cs-drawer-social a {
+    display: inline-block;
+    transition: opacity 0.2s;
+}
+
+.cs-drawer-social a:hover {
+    opacity: 0.8;
+}
+
+.cs-drawer-social img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+/* Nút mở drawer */
+.custom-drawer.has-block {
+    cursor: pointer;
+}
+
+/* ============ END CUSTOM RIGHT DRAWER ============ */
+
+.cs-drawer-close {
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+
+.cs-drawer-header {
+    padding: 0px 16px;
+}
+

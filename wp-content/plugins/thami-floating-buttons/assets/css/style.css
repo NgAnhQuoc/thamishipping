@@ -1,0 +1,172 @@
+#cs-thamibutton-wrapper {
+    position: fixed;
+    top: 50%;
+    left: -220px; /* Initially hide the submenu */
+    transform: translateY(-50%);
+    z-index: 999999;
+    transition: left 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    font-family: 'Roboto', 'Arial', sans-serif;
+}
+
+#cs-thamibutton-wrapper.is-open {
+    left: 0 !important;
+}
+
+.cs-thamibutton-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Submenu Styles */
+.cs-thamibutton-submenu {
+    width: 220px;
+    background: #b21e23; /* Red color matching screenshot */
+    border-radius: 0 0 10px 0;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.cs-thamibutton-submenu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.2s;
+    font-size: 13px;
+}
+
+.cs-thamibutton-submenu-item:last-child {
+    border-bottom: none;
+}
+
+.cs-thamibutton-submenu-item:hover {
+    background: rgba(0,0,0,0.2);
+}
+
+.cs-thamibutton-submenu-item img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Main Buttons Styles */
+.cs-thamibutton-main-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cs-thamibutton-main-btn {
+    display: flex;
+    align-items: center;
+    background: #e3e2e2;
+    padding: 8px 10px 8px 10px;
+    border-radius: 0 5px 5px 0;
+    color: #2b2c2c !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    min-width: 115px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: background 0.2s;
+}
+
+.cs-thamibutton-main-btn:hover {
+    background: #d4d3d3;
+}
+
+.cs-thamibutton-btn-text {
+    flex: 1;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+@media (min-width: 1023px) {
+    .cs-thamibutton-btn-text {
+        flex: 0 0 50px !important;
+        width: 48px !important;
+        white-space: normal;
+    }
+}
+
+.cs-thamibutton-btn-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+.cs-thamibutton-btn-zalo .cs-thamibutton-btn-icon img {
+    border-radius: 50%;
+    background: #fff;
+    padding: 2px;
+}
+
+.cs-thamibutton-main-btn:hover .cs-thamibutton-btn-text {
+    color: #00aeef;
+}
+
+
+/* Responsive Mobile */
+@media (max-width: 1023px) {
+    #cs-thamibutton-wrapper {
+        top: auto !important;
+        bottom: 20px !important;
+        transform: none !important;
+        left: 0 !important; /* Always visible on the left edge */
+    }
+
+    .cs-thamibutton-container {
+        flex-direction: column; /* Stack submenu above the buttons */
+    }
+
+    .cs-thamibutton-submenu {
+        width: 170px;
+        display: none; /* Hide submenu by default */
+        border-radius: 0 10px 0 0; /* Round top-right corner */
+        box-shadow: 2px -2px 10px rgba(0,0,0,0.2); /* Shadow pointing upwards */
+    }
+
+    #cs-thamibutton-wrapper.is-open .cs-thamibutton-submenu {
+        display: block; /* Show submenu when clicked */
+    }
+
+    .cs-thamibutton-main-buttons {
+        gap: 40px; /* Space between Skype and Zalo */
+        margin-top: 2px;
+    }
+
+    .cs-thamibutton-main-btn {
+        min-width: auto;
+        padding: 6px 10px 6px 12px;
+    }
+
+    .cs-thamibutton-btn-text {
+        font-size: 11px;
+        width: 50px;
+        margin-right: 2px;
+    }
+
+    /* Transform Zalo button to icon only */
+    .cs-thamibutton-btn-zalo {
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 0 0 0 15px !important;
+    }
+
+    .cs-thamibutton-btn-zalo .cs-thamibutton-btn-text {
+        display: none; /* Hide text */
+    }
+
+    .cs-thamibutton-btn-zalo .cs-thamibutton-btn-icon img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: #fff;
+        padding: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+}
