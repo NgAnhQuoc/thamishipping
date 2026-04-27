@@ -352,6 +352,7 @@ footer .foot-title {
     .header ul.header-nav li.menu-item a{
         font-size: 14px;
         cursor: pointer;
+        font-weight: 400;
     } 
 
     .header .logo-left .logo {
@@ -1642,4 +1643,104 @@ div#main-menu.mobile-sidebar ul li button i {
 .cs-drawer-header {
     padding: 0px 16px;
 }
+
+/* === CUSTOM DESKTOP SUBMENU (NEWS & FLYOUT) === */
+@media (min-width: 850px) {
+
+    /* Level 2: Đảm bảo submenu hiện dạng danh sách dọc */
+    .header-bottom-nav > li.has-dropdown > .nav-dropdown {
+        display: block !important;
+        width: 260px !important;
+        min-width: 260px !important;
+        padding: 0 !important;
+        background-color: #00aeef !important; /* Màu xanh sáng */
+    }
+
+    .header-bottom-nav > li.has-dropdown > .nav-dropdown > li {
+        display: block !important;
+        width: 100% !important;
+        position: relative !important;
+        float: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .header-bottom-nav > li.has-dropdown > .nav-dropdown > li:last-child {
+        border-bottom: none;
+    }
+
+    /* Reset padding cho nav-column (container của recruitment) */
+    .header-bottom-nav .nav-dropdown .nav-column {
+        padding: 0 !important;
+    }
+
+    /* Level 3: Flyout sang bên phải (Dành cho Recruitment) */
+    .header-bottom-nav .nav-dropdown li.menu-item-has-children > ul.nav-column,
+    .header-bottom-nav .nav-dropdown li.nav-dropdown-col > ul.nav-column {
+        position: absolute !important;
+        top: 0 !important;
+        left: 100% !important;
+        width: 320px !important;
+        min-width: 260px !important;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        background-color: #004a80 !important; /* Màu xanh đậm cho menu cấp 3 */
+        z-index: 9999;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+    }
+
+    /* Hiện menu cấp 3 khi hover vào item cha */
+    .header-bottom-nav .nav-dropdown li.menu-item-has-children:hover > ul.nav-column,
+    .header-bottom-nav .nav-dropdown li.nav-dropdown-col:hover > ul.nav-column {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    /* Đảm bảo các item bên trong menu flyout cũng hiện dọc */
+    .header-bottom-nav .nav-dropdown ul.nav-column > li {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.999) !important;
+    }
+
+    .header-bottom-nav .nav-dropdown ul.nav-column > li > a {
+        padding: 10px 15px !important;
+        color: #fff !important;
+        display: block !important;
+        font-size: 13px;
+        background: #00aeef;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.594) !important;
+        white-space: pre-wrap;
+    }
+
+    .header-bottom-nav .nav-dropdown ul.nav-column > li:hover > a {
+        background-color: #004a80 !important;
+    }
+
+    /* Thêm icon mũi tên cho các item có menu con */
+    .header-bottom-nav .nav-dropdown li.menu-item-has-children > a,
+    .header-bottom-nav .nav-dropdown li.nav-dropdown-col > a {
+        position: relative !important;
+        padding-right: 30px !important; /* Tạo khoảng trống cho icon */
+    }
+
+    .header-bottom-nav .nav-dropdown li.menu-item-has-children > a::after,
+    .header-bottom-nav .nav-dropdown li.nav-dropdown-col > a::after {
+        content: '\f105' !important;
+        font-family: "fl-icons" !important;
+        position: absolute !important;
+        right: 10px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 14px !important;
+        font-weight: normal !important;
+        opacity: 0.8;
+    }
+}
+/* === END CUSTOM DESKTOP SUBMENU === */
+
 
