@@ -227,11 +227,13 @@ ul li.line i {
     min-height: 175px;
     overflow: hidden;
 }
+
 }
 
 .cs-h-box .cs-h-content p {
     text-align: justify;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .cs-h-more {
