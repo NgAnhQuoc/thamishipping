@@ -39,21 +39,29 @@ add_action('wp_footer', function () {
 
 	<script>
 		jQuery(document).ready(function ($) {
-			function fixFlatsomeSliders() {
-				$('.flickity-enabled').each(function () {
-					var $slider = $(this);
-					var flkty = $slider.data('flickity');
-					if (flkty && flkty.options.groupCells !== false) {
-						flkty.options.groupCells = false;
-						flkty.options.wrapAround = true;
-						flkty.options.autoPlay = 3000;
-						flkty.activatePlayer();
-						flkty.reposition();
-						flkty.resize();
-					}
+			// Poll until Flickity is ready on .custom-slider-brand, then fix groupCells
+			var _brandFixInterval = setInterval(function () {
+				var $brandSlider = $('.custom-slider-brand');
+				if (!$brandSlider.length) return;
+				var flkty = $brandSlider.data('flickity');
+				if (!flkty) return;
+
+				clearInterval(_brandFixInterval);
+
+				// Destroy (ignore DOM errors) then reinit with groupCells: false
+				try { $brandSlider.flickity('destroy'); } catch (e) { }
+				$brandSlider.flickity({
+					groupCells: false,
+					wrapAround: true,
+					autoPlay: flkty.options.autoPlay || false,
+					prevNextButtons: true,
+					pageDots: flkty.options.pageDots !== undefined ? flkty.options.pageDots : false,
+					cellAlign: flkty.options.cellAlign || 'left',
+					contain: flkty.options.contain || false
 				});
-			}
-			setTimeout(fixFlatsomeSliders, 500);
+			}, 100);
+
+
 
 			setTimeout(function () {
 				var $li = $('.header-search-dropdown');
@@ -85,7 +93,19 @@ add_action('wp_footer', function () {
 				$input.on('keyup keydown input', function (e) {
 					e.stopImmediatePropagation();
 				});
+				// Giữ nguyên language prefix (/vi/, /en/...) khi submit search
+				$dropdown.find('form').off('submit.searchFix').on('submit.searchFix', function (e) {
+					e.preventDefault();
+					var q = $input.val().trim();
+					if (q) {
+						var langPrefix = '';
+						var m = window.location.pathname.match(/^(\/[a-z]{2}\/)/);
+						if (m) langPrefix = m[1];
+						window.location.href = langPrefix + '?s=' + encodeURIComponent(q);
+					}
+				});
 			}, 500);
+
 
 			var $overlay = $('#csDrawerOverlay');
 			var $panel = $('#csDrawerPanel');
@@ -204,3 +224,27 @@ add_filter('pre_get_posts', function ($query) {
 	}
 	return $query;
 });
+
+// Fix: TranslatePress intercept /vi/ khiến WordPress không nhận ?s= vào query_vars.
+// Dùng parse_request (chạy sớm hơn) để force inject s vào query — giữ nguyên tiếng Việt.
+add_action('parse_request', function ($wp) {
+	if (is_admin())
+		return;
+
+	if (isset($_GET['s']) && empty($wp->query_vars['s'])) {
+		$wp->query_vars['s'] = sanitize_text_field($_GET['s']);
+	}
+});
+
+// Ngăn TranslatePress ghi đè kết quả tìm kiếm (xóa biến 's' và thay bằng post__in) trong ngữ cảnh tiếng Việt
+add_action('pre_get_posts', function ($query) {
+	if ($query->is_search && $query->is_main_query() && !is_admin()) {
+		if (class_exists('TRP_Translate_Press')) {
+			$trp = TRP_Translate_Press::get_trp_instance();
+			$search = $trp->get_component('search');
+			if ($search) {
+				remove_action('pre_get_posts', [$search, 'trp_search_filter'], 99999999);
+			}
+		}
+	}
+}, 99999998);
