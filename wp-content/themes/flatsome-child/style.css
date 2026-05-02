@@ -1769,3 +1769,7 @@ button#top-link.back-to-top i {
     border-color: #03abd9 !important;
     color: #fff !important;
 }
+
+.single.single-post .blog-single .blog-share {
+    text-align: left;
+}
