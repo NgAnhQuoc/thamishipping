@@ -169,7 +169,7 @@ add_filter('flatsome_flickity_options', function ($options, $atts) {
 function flatsome_related_posts_by_category($atts)
 {
 	if (!is_single())
-		return; // Chỉ hiển thị trong trang chi tiết bài viết
+		return '<style>#block-2 { display: none !important; }</style>'; // Ẩn nếu không phải trang bài viết
 
 	$categories = get_the_category(get_the_ID());
 	if ($categories) {
@@ -214,6 +214,9 @@ function flatsome_related_posts_by_category($atts)
 			return $output;
 		}
 	}
+
+	// Nếu không có bài viết nào hoặc không có category, ẩn block-2
+	return '<style>#block-2 { display: none !important; }</style>';
 }
 add_shortcode('related_posts_sidebar', 'flatsome_related_posts_by_category');
 
@@ -248,3 +251,46 @@ add_action('pre_get_posts', function ($query) {
 		}
 	}
 }, 99999998);
+
+// Ghi đè hàm phân trang của Flatsome để thu gọn số lượng trang hiển thị
+if (!function_exists('flatsome_posts_pagination')) {
+	function flatsome_posts_pagination()
+	{
+		$prev_arrow = is_rtl() ? get_flatsome_icon('icon-angle-right') : get_flatsome_icon('icon-angle-left');
+		$next_arrow = is_rtl() ? get_flatsome_icon('icon-angle-left') : get_flatsome_icon('icon-angle-right');
+
+		global $wp_query;
+		$total = $wp_query->max_num_pages;
+		$big = 999999999;
+		if ($total > 1) {
+			if (!$current_page = get_query_var('paged'))
+				$current_page = 1;
+			if (get_option('permalink_structure')) {
+				$format = 'page/%#%/';
+			} else {
+				$format = '&paged=%#%';
+			}
+			$pages = paginate_links(array(
+				'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+				'format' => $format,
+				'current' => max(1, get_query_var('paged')),
+				'total' => $total,
+				'mid_size' => 1, // Đã sửa thành 1 để thu gọn
+				'type' => 'array',
+				'prev_text' => $prev_arrow,
+				'next_text' => $next_arrow,
+			));
+
+			if (is_array($pages)) {
+				echo '<ul class="page-numbers nav-pagination links text-center">';
+				foreach ($pages as $page) {
+					$page = str_replace("page-numbers", "page-number", $page);
+					$page = str_replace('<a class="next page-number', '<a aria-label="' . esc_attr__('Next', 'flatsome') . '" class="next page-number', $page);
+					$page = str_replace('<a class="prev page-number', '<a aria-label="' . esc_attr__('Previous', 'flatsome') . '" class="prev page-number', $page);
+					echo "<li>$page</li>";
+				}
+				echo '</ul>';
+			}
+		}
+	}
+}
