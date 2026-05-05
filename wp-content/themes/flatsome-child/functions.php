@@ -8,17 +8,147 @@ function flatsome_posted_on()
 	echo '<span class="posted-on"><i class="fa fa-calendar"></i> ' . $date . '</span>';
 }
 
+// Custom [wpseo_breadcrumb] shortcode - thay thế Yoast SEO breadcrumb
+// Cấu trúc HTML giống y hệt Yoast SEO
+if (!shortcode_exists('wpseo_breadcrumb')) {
+	add_shortcode('wpseo_breadcrumb', function () {
+		$separator = ' &raquo; ';
+		$crumbs = [];
+
+		// Trang chủ
+		$crumbs[] = [
+			'text' => 'Home',
+			'url' => home_url('/'),
+		];
+
+		if (is_category()) {
+			$category = get_queried_object();
+			// Thêm category cha nếu có
+			$ancestors = array_reverse(get_ancestors($category->term_id, 'category'));
+			foreach ($ancestors as $ancestor_id) {
+				$ancestor = get_category($ancestor_id);
+				$crumbs[] = [
+					'text' => $ancestor->name,
+					'url' => get_category_link($ancestor_id),
+				];
+			}
+			// Category hiện tại (cuối cùng, không có link)
+			$crumbs[] = [
+				'text' => $category->name,
+				'url' => '',
+			];
+		} elseif (is_single()) {
+			$categories = get_the_category();
+			if (!empty($categories)) {
+				$cat = $categories[0];
+				// Thêm category cha nếu có
+				$ancestors = array_reverse(get_ancestors($cat->term_id, 'category'));
+				foreach ($ancestors as $ancestor_id) {
+					$ancestor = get_category($ancestor_id);
+					$crumbs[] = [
+						'text' => $ancestor->name,
+						'url' => get_category_link($ancestor_id),
+					];
+				}
+				// Category của bài viết
+				$crumbs[] = [
+					'text' => $cat->name,
+					'url' => get_category_link($cat->term_id),
+				];
+			}
+			// Bài viết hiện tại (cuối cùng)
+			$crumbs[] = [
+				'text' => get_the_title(),
+				'url' => '',
+			];
+		} elseif (is_page()) {
+			global $post;
+			if ($post->post_parent) {
+				$ancestors = array_reverse(get_post_ancestors($post->ID));
+				foreach ($ancestors as $ancestor_id) {
+					$crumbs[] = [
+						'text' => get_the_title($ancestor_id),
+						'url' => get_permalink($ancestor_id),
+					];
+				}
+			}
+			$crumbs[] = [
+				'text' => get_the_title(),
+				'url' => '',
+			];
+		} elseif (is_search()) {
+			$crumbs[] = [
+				'text' => 'Bạn đã tìm kiếm: ' . esc_html(get_search_query()),
+				'url' => '',
+			];
+		} elseif (is_tag()) {
+			$crumbs[] = [
+				'text' => single_tag_title('', false),
+				'url' => '',
+			];
+		} elseif (is_author()) {
+			$crumbs[] = [
+				'text' => 'Tác giả: ' . get_the_author(),
+				'url' => '',
+			];
+		} elseif (is_day()) {
+			$crumbs[] = [
+				'text' => 'Lưu trữ: ' . get_the_date(),
+				'url' => '',
+			];
+		} elseif (is_month()) {
+			$crumbs[] = [
+				'text' => 'Lưu trữ: ' . get_the_date('F Y'),
+				'url' => '',
+			];
+		} elseif (is_year()) {
+			$crumbs[] = [
+				'text' => 'Lưu trữ: ' . get_the_date('Y'),
+				'url' => '',
+			];
+		} elseif (is_archive()) {
+			$crumbs[] = [
+				'text' => get_the_archive_title(),
+				'url' => '',
+			];
+		} elseif (is_404()) {
+			$crumbs[] = [
+				'text' => 'Lỗi 404 - Không tìm thấy trang',
+				'url' => '',
+			];
+		}
+
+		// Build HTML giống Yoast SEO
+		$total = count($crumbs);
+		$links = [];
+		foreach ($crumbs as $index => $crumb) {
+			$text = trim($crumb['text']);
+			if (empty($text))
+				continue;
+
+			if ($index < ($total - 1) && !empty($crumb['url'])) {
+				// Crumb có link
+				$links[] = '<span><a href="' . esc_url($crumb['url']) . '">' . esc_html($text) . '</a></span>';
+			} elseif ($index === ($total - 1)) {
+				// Crumb cuối cùng - bold, không link
+				$links[] = '<span class="breadcrumb_last" aria-current="page">' . esc_html($text) . '</span>';
+			} else {
+				// Crumb không có link
+				$links[] = '<span>' . esc_html($text) . '</span>';
+			}
+		}
+
+		return '<span>' . implode($separator, $links) . '</span>';
+	});
+}
+
 // Add Breadcrumb before blog content
 add_action('flatsome_before_blog', function () {
 	if (is_single()) {
 		echo '<div class="custom-breadcrumb-bar"><div class="container">';
-		if (function_exists('yoast_breadcrumb')) {
-			echo "<div class='custom-breadcrumb-container'>";
-			echo do_shortcode('[wpseo_breadcrumb]');
-			echo "</div>";
-		} else {
-			echo do_shortcode('[wpseo_breadcrumb]');
-		}
+		echo "<div class='custom-breadcrumb-container'>";
+		echo do_shortcode('[wpseo_breadcrumb]');
+		echo "</div>";
 		echo '</div></div>';
 	}
 });
